@@ -1,0 +1,27 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Area Of Circle</title>
+<style type="text/css">button{margin: 1px; cursor: pointer;}</style>
+<fieldset style="width: 100px; margin: auto; padding: auto;">
+<label>Enter Circle Radius</label>
+<button onclick="clearvalue('txt')">x</button>
+<br>
+<input type="number" id="txt" placeholder="Enter Number Only" oninput="run()">
+<br>
+<button onclick="run()">π*r²</button>
+<br>
+<b>Output</b>
+<button onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">x</button>
+<br>
+<input type="text" id="copy" placeholder="r*r*3.14">
+</fieldset>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+function run(){
+var a=document.getElementById('txt').value;
+var c=a*a*3.14;
+document.getElementById('copy').value=c;
+if(a==""){document.getElementById('copy').value="Enter Value";}
+}
+</script>
