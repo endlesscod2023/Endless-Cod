@@ -1,0 +1,51 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>Straight Numbers</title>
+
+<style type="text/css">
+button{margin: 1px; cursor: pointer;}
+textarea{overflow: scroll;}
+fieldset{width: 100px; margin: auto; padding: auto;}
+</style>
+
+<fieldset>
+<label>Starting Number</label>
+<button onclick="clearvalue('sno')">X</button>
+<input id="sno" type="number" oninput="run1()" placeholder="Number Only Ex.1" value="1">
+<br>
+<label>Ending Number</label>
+<button onclick="clearvalue('eno')">X</button>
+<input id="eno" type="number"  oninput="run1()" placeholder="Number Only Ex.10" value="10">
+<br>
+<button onclick="run2()">v</button>
+<button onclick="run1()">></button>
+<br>
+<b>Output</b>
+<button onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">x</button>
+<br>
+<textarea id="copy" rows="10"></textarea>
+</fieldset>
+
+<script type="text/javascript">
+function run1(){
+var sno=document.getElementById('sno').value;
+var eno=document.getElementById('eno').value;
+document.getElementById('copy').value='';
+for(var i=sno; i<=eno; i++){
+	document.getElementById('copy').value+=i+' ';
+}
+if(sno=="" || eno==""){document.getElementById('copy').value="Enter All Values"}
+}
+function run2(){
+var sno=document.getElementById('sno').value;
+var eno=document.getElementById('eno').value;
+document.getElementById('copy').value='';
+for(var i=sno; i<=eno; i++){
+	document.getElementById('copy').value+=i+'\n';
+}
+if(sno=="" || eno==""){document.getElementById('copy').value="Enter All Values"}
+}
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}	
+</script>
