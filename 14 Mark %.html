@@ -1,0 +1,33 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mark %</title>
+<style type="text/css">button{margin: 1px; cursor: pointer;}</style>
+<fieldset style="width: 100px; margin: auto; padding: auto;">
+<label>Enter Total Mark</label>
+<button onclick="clearvalue('txt1')">x</button>
+<br>
+<input type="Number" id="txt1" placeholder="Enter Number Only" oninput="run()">
+<br>
+<label>Enter Total Subjects</label>
+<button onclick="clearvalue('txt2')" style="margin-top: 10px;">x</button>
+<br>
+<input type="Number" id="txt2" placeholder="Enter Number Only" oninput="run()">
+<br>
+<button onclick="run()">Run</button>
+<br>
+<b>Output</b>
+<button onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">x</button>
+<br>
+<input type="text" id="copy" placeholder="mark%">
+</fieldset>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+function run(){
+var m=document.getElementById('txt1').value;
+var s=document.getElementById('txt2').value;
+var mark=+m/+s;
+document.getElementById('copy').value=mark+' %';
+if(m=="" || s==""){document.getElementById('copy').value="Enter All Values";}
+}
+</script>
