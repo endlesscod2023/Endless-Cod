@@ -1,0 +1,51 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two Number Sums</title>
+<style type="text/css">button{margin: 1px; cursor: pointer;}</style>
+<fieldset style="width: 100px; margin: auto; padding: auto;">
+<label>Enter Number 1</label>
+<button onclick="clearvalue('txt1')">x</button>
+<input type="number" id="txt1" placeholder="Enter Number Only n1" onclick="document.getElementById('copy').value=''">	
+<br><br>
+<label>Enter Number 2</label>
+<button onclick="clearvalue('txt2')">x</button>
+<input type="number" id="txt2" placeholder="Enter Number Only n2" onclick="document.getElementById('copy').value=''">
+<br>
+<button onclick="run1()">+</button>
+<button onclick="run2()">-</button>
+<button onclick="run3()">*</button>
+<button onclick="run4()">/</button>
+<br>
+<b>Output</b>
+<button onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">x</button>
+<br>
+<input type="text" id="copy" name="" placeholder="sum=n1 n2">
+</fieldset>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+function run1(){
+var x=document.getElementById('txt1').value;
+var y=document.getElementById('txt2').value;
+document.getElementById('copy').value=x+"+"+y+"="+ (+x+ +y);
+if(x=="" || y==""){document.getElementById('copy').value="Enter All Values";}
+}
+function run2(){
+var x=document.getElementById('txt1').value;
+var y=document.getElementById('txt2').value;
+document.getElementById('copy').value=x+"-"+y+"="+ (x-y);
+if(x=="" || y==""){document.getElementById('copy').value="Enter All Values";}
+}
+function run3(){
+var x=document.getElementById('txt1').value;
+var y=document.getElementById('txt2').value;	
+document.getElementById('copy').value=x+"*"+y+"="+ (x*y);
+if(x=="" || y==""){document.getElementById('copy').value="Enter All Values";}
+}
+function run4(){
+var x=document.getElementById('txt1').value;
+var y=document.getElementById('txt2').value;
+document.getElementById('copy').value=x+"/"+y+"="+ (x/y);
+if(x=="" || y==""){document.getElementById('copy').value="Enter All Values";}
+}
+</script>
