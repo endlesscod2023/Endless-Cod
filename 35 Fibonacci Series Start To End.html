@@ -1,0 +1,99 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fibonacci Series</title>
+<style type="text/css">button{margin: 1px; cursor: pointer;}
+textarea{overflow: scroll;}</style>
+<fieldset style="width: 100px; margin: auto; padding: auto;">
+<legend>Fibonacci Series</legend>
+<label>Enter Starting Number</label>
+<button onclick="clearvalue('txt1')">x</button>
+<input type="number" id="txt1" placeholder="Enter Number Only" oninput="run4()">
+<br><br>
+<label>How Many Numbers</label>
+<button onclick="clearvalue('txt2')">x</button>
+<input type="number" id="txt2" placeholder="Enter Number Only" oninput="run4()">
+<br>
+<button onclick="run1()">></button>
+<button onclick="run2()">v</button>
+<br>
+<button onclick="run3()">n=x+y=></button>
+<button onclick="run4()">n=x+y=v</button>
+<br>
+<b>Output</b>
+<button onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">x</button>
+<br>
+<textarea id="copy" cols="21" rows="10" placeholder="Starting ... Ending"></textarea>
+</fieldset>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+function run1(){
+var s=document.getElementById('txt1').value;
+var num=document.getElementById('txt2').value;
+document.getElementById("copy").value="";
+var a, b, c, i=3;
+a=+s;
+b=+s+1;
+if(num>=2){document.getElementById("copy").value+=a+" "+b+" ";}
+while(i<=num){
+c=a+b;
+document.getElementById("copy").value+=c+" ";
+a=b;
+b=c;
+i++;
+}
+if(s=="" || num==""){document.getElementById('copy').value="Enter All Values";}
+}
+function run2(){
+var s=document.getElementById('txt1').value;
+var num=document.getElementById('txt2').value;
+document.getElementById("copy").value="";
+var a, b, c, i=3;
+a=+s;
+b=+s+1;
+if(num>=2){document.getElementById("copy").value+=a+"\n"+b+"\n";}
+while(i<=num){
+c=a+b;
+document.getElementById("copy").value+=c+"\n"
+a=b;
+b=c;
+i++;
+}
+if(s=="" || num==""){document.getElementById('copy').value="Enter All Values";}
+}
+
+function run3(){
+var s=document.getElementById('txt1').value;
+var num=document.getElementById('txt2').value;
+document.getElementById("copy").value="";
+var a, b, c, i=3;
+a=+s;
+b=+s+1;
+if(num>=2){document.getElementById("copy").value+=+a+"n="+a+" "+b+"n="+b+" ";}
+while(i<=num){
+c=a+b;
+document.getElementById("copy").value+=+i+"n="+a+"+"+b+"="+c+" ";
+a=b;
+b=c;
+i++;
+}
+if(s=="" || num==""){document.getElementById('copy').value="Enter All Values";}
+}
+function run4(){
+var s=document.getElementById('txt1').value;
+var num=document.getElementById('txt2').value;
+document.getElementById("copy").value="";
+var a, b, c, i=3;
+a=+s;
+b=+s+1;
+if(num>=2){document.getElementById("copy").value+="1n="+a+"\n"+"2n="+b+"\n";}
+while(i<=num){
+c=+a+b;
+document.getElementById("copy").value+=+i+"n="+a+"+"+b+"="+c+"\n"
+a=b;
+b=c;
+i++;
+}
+if(s=="" || num==""){document.getElementById('copy').value="Enter All Values";}
+}
+</script>
