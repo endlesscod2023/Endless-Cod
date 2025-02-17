@@ -1,0 +1,369 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>A-Z a-z Count</title>
+<style type="text/css">
+button{margin: 1px; cursor: pointer;}
+textarea{overflow: scroll;}
+</style>
+<fieldset style="width:100px; margin: auto; padding: auto;">
+<label>Enter Any</label><button onclick="clearvalue('txt1')">x</button><br>
+<textarea id="txt1" placeholder="Enter Any" rows="5" oninput="run()"></textarea>
+<br>
+<button id="AtoZatoz" onclick="copy(this)">A-Z,a-z=0</button>
+<br><br>
+<button id="atoz" onclick="copy(this)">a-z=0</button>
+<br>
+<button id="aza" onclick="copy(this)">a=0</button>
+<button id="azb" onclick="copy(this)">b=0</button>
+<button id="azc" onclick="copy(this)">c=0</button>
+<button id="azd" onclick="copy(this)">d=0</button>
+<button id="aze" onclick="copy(this)">e=0</button>
+<button id="azf" onclick="copy(this)">f=0</button>
+<button id="azg" onclick="copy(this)">g=0</button>
+<button id="azh" onclick="copy(this)">h=0</button>
+<button id="azi" onclick="copy(this)">i=0</button>
+<button id="azj" onclick="copy(this)">j=0</button>
+<button id="azk" onclick="copy(this)">k=0</button>
+<button id="azl" onclick="copy(this)">l=0</button>
+<button id="azm" onclick="copy(this)">m=0</button>
+<button id="azn" onclick="copy(this)">n=0</button>
+<button id="azo" onclick="copy(this)">o=0</button>
+<button id="azp" onclick="copy(this)">p=0</button>
+<button id="azq" onclick="copy(this)">q=0</button>
+<button id="azr" onclick="copy(this)">r=0</button>
+<button id="azs" onclick="copy(this)">s=0</button>
+<button id="azt" onclick="copy(this)">t=0</button>
+<button id="azu" onclick="copy(this)">u=0</button>
+<button id="azv" onclick="copy(this)">v=0</button>
+<button id="azw" onclick="copy(this)">w=0</button>
+<button id="azx" onclick="copy(this)">x=0</button>
+<button id="azy" onclick="copy(this)">y=0</button>
+<button id="azz" onclick="copy(this)">z=0</button>
+<br><br>
+<button id="AtoZ" onclick="copy(this)">A-Z=0</button>
+<br>
+<button id="AZA" onclick="copy(this)">A=0</button>
+<button id="AZB" onclick="copy(this)">B=0</button>
+<button id="AZC" onclick="copy(this)">C=0</button>
+<button id="AZD" onclick="copy(this)">D=0</button>
+<button id="AZE" onclick="copy(this)">E=0</button>
+<button id="AZF" onclick="copy(this)">F=0</button>
+<button id="AZG" onclick="copy(this)">G=0</button>
+<button id="AZH" onclick="copy(this)">H=0</button>
+<button id="AZI" onclick="copy(this)">I=0</button>
+<button id="AZJ" onclick="copy(this)">J=0</button>
+<button id="AZK" onclick="copy(this)">K=0</button>
+<button id="AZL" onclick="copy(this)">L=0</button>
+<button id="AZM" onclick="copy(this)">M=0</button>
+<button id="AZN" onclick="copy(this)">N=0</button>
+<button id="AZO" onclick="copy(this)">O=0</button>
+<button id="AZP" onclick="copy(this)">P=0</button>
+<button id="AZQ" onclick="copy(this)">Q=0</button>
+<button id="AZR" onclick="copy(this)">R=0</button>
+<button id="AZS" onclick="copy(this)">S=0</button>
+<button id="AZT" onclick="copy(this)">T=0</button>
+<button id="AZU" onclick="copy(this)">U=0</button>
+<button id="AZV" onclick="copy(this)">V=0</button>
+<button id="AZW" onclick="copy(this)">W=0</button>
+<button id="AZX" onclick="copy(this)">X=0</button>
+<button id="AZY" onclick="copy(this)">Y=0</button>
+<button id="AZZ" onclick="copy(this)">Z=0</button>
+</fieldset>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();
+	document.execCommand("Delete");}
+function copy(that){
+var inp=document.createElement('input');
+document.body.appendChild(inp)
+inp.value=that.textContent
+inp.select();
+document.execCommand('copy', false);
+inp.remove();
+}
+</script>
+<script type="text/javascript">
+function run(){ 
+AtoZatoz();
+AtoZ();aza();azb();azc();azd();aze();azf();azg();azh();azi();azj();azk();azl();azm();azn();azo();azp();azq();azr();azs();azt();azu();azv();azw();azx();azy();azz();
+atoz();AZA();AZB();AZC();AZD();AZE();AZF();AZG();AZH();AZI();AZJ();AZK();AZL();AZM();AZN();AZO();AZP();AZQ();AZR();AZS();AZT();AZU();AZV();AZW();AZX();AZY();AZZ();
+}
+function AtoZatoz(){var s=document.getElementById('txt1').value;
+var Upper=s.length-s.replace(/[a-z&A-Z]/g, '').length;
+document.getElementById('AtoZatoz').textContent="A-Z,a-z="+Upper;
+}
+
+// a-z
+function atoz(){
+var s=document.getElementById('txt1').value;
+var low=s.length-s.replace(/[a-z]/g, '').length;
+document.getElementById('atoz').textContent="a-z="+low;
+}
+function aza(){
+var aza=document.getElementById('txt1').value
+var low=aza.length-aza.replace(/[a]/g, '').length
+document.getElementById('aza').textContent="a="+low
+}
+function azb(){
+var azb=document.getElementById('txt1').value
+var low=azb.length-azb.replace(/[b]/g, '').length
+document.getElementById('azb').textContent="b="+low
+}
+function azc(){
+var azc=document.getElementById('txt1').value
+var low=azc.length-azc.replace(/[c]/g, '').length
+document.getElementById('azc').textContent="c="+low
+}
+function azd(){
+var azd=document.getElementById('txt1').value
+var low=azd.length-azd.replace(/[d]/g, '').length
+document.getElementById('azd').textContent="d="+low
+}
+function aze(){
+var aze=document.getElementById('txt1').value
+var low=aze.length-aze.replace(/[e]/g, '').length
+document.getElementById('aze').textContent="e="+low
+}
+function azf(){
+var azf=document.getElementById('txt1').value
+var low=azf.length-azf.replace(/[f]/g, '').length
+document.getElementById('azf').textContent="f="+low
+}
+function azg(){
+var azg=document.getElementById('txt1').value
+var low=azg.length-azg.replace(/[g]/g, '').length
+document.getElementById('azg').textContent="g="+low
+}
+function azh(){
+var azh=document.getElementById('txt1').value
+var low=azh.length-azh.replace(/[h]/g, '').length
+document.getElementById('azh').textContent="h="+low
+}
+function azi(){
+var azi=document.getElementById('txt1').value
+var low=azi.length-azi.replace(/[i]/g, '').length
+document.getElementById('azi').textContent="i="+low
+}
+function azj(){
+var azj=document.getElementById('txt1').value
+var low=azj.length-azj.replace(/[j]/g, '').length
+document.getElementById('azj').textContent="j="+low
+}
+function azk(){
+var azk=document.getElementById('txt1').value
+var low=azk.length-azk.replace(/[k]/g, '').length
+document.getElementById('azk').textContent="k="+low
+}
+function azl(){
+var azl=document.getElementById('txt1').value
+var low=azl.length-azl.replace(/[l]/g, '').length
+document.getElementById('azl').textContent="l="+low
+}
+function azm(){
+var azm=document.getElementById('txt1').value
+var low=azm.length-azm.replace(/[m]/g, '').length
+document.getElementById('azm').textContent="m="+low
+}
+function azn(){
+var azn=document.getElementById('txt1').value
+var low=azn.length-azn.replace(/[n]/g, '').length
+document.getElementById('azn').textContent="n="+low
+}
+function azo(){
+var azo=document.getElementById('txt1').value
+var low=azo.length-azo.replace(/[o]/g, '').length
+document.getElementById('azo').textContent="o="+low
+}
+function azp(){
+var azp=document.getElementById('txt1').value
+var low=azp.length-azp.replace(/[p]/g, '').length
+document.getElementById('azp').textContent="p="+low
+}
+function azq(){
+var azq=document.getElementById('txt1').value
+var low=azq.length-azq.replace(/[q]/g, '').length
+document.getElementById('azq').textContent="q="+low
+}
+function azr(){
+var azr=document.getElementById('txt1').value
+var low=azr.length-azr.replace(/[r]/g, '').length
+document.getElementById('azr').textContent="r="+low
+}
+function azs(){
+var azs=document.getElementById('txt1').value
+var low=azs.length-azs.replace(/[s]/g, '').length
+document.getElementById('azs').textContent="s="+low
+}
+function azt(){
+var azt=document.getElementById('txt1').value
+var low=azt.length-azt.replace(/[t]/g, '').length
+document.getElementById('azt').textContent="t="+low
+}
+function azu(){
+var azu=document.getElementById('txt1').value
+var low=azu.length-azu.replace(/[u]/g, '').length
+document.getElementById('azu').textContent="u="+low
+}
+function azv(){
+var azv=document.getElementById('txt1').value
+var low=azv.length-azv.replace(/[v]/g, '').length
+document.getElementById('azv').textContent="v="+low
+}
+function azw(){
+var azw=document.getElementById('txt1').value
+var low=azw.length-azw.replace(/[w]/g, '').length
+document.getElementById('azw').textContent="w="+low
+}
+function azx(){
+var azx=document.getElementById('txt1').value
+var low=azx.length-azx.replace(/[x]/g, '').length
+document.getElementById('azx').textContent="x="+low
+}
+function azy(){
+var azy=document.getElementById('txt1').value
+var low=azy.length-azy.replace(/[y]/g, '').length
+document.getElementById('azy').textContent="y="+low
+}
+function azz(){
+var azz=document.getElementById('txt1').value
+var low=azz.length-azz.replace(/[z]/g, '').length
+document.getElementById('azz').textContent="z="+low
+}
+
+// A-Z
+function AtoZ(){
+var s=document.getElementById('txt1').value;
+var Upper=s.length-s.replace(/[A-Z]/g, '').length;
+document.getElementById('AtoZ').textContent="A-Z="+Upper;
+}
+function AZA(){
+var AZA=document.getElementById('txt1').value
+var low=AZA.length-AZA.replace(/[A]/g, '').length
+document.getElementById('AZA').textContent="A="+low
+}
+function AZB(){
+var AZB=document.getElementById('txt1').value
+var low=AZB.length-AZB.replace(/[B]/g, '').length
+document.getElementById('AZB').textContent="B="+low
+}
+function AZC(){
+var AZC=document.getElementById('txt1').value
+var low=AZC.length-AZC.replace(/[C]/g, '').length
+document.getElementById('AZC').textContent="C="+low
+}
+function AZD(){
+var AZD=document.getElementById('txt1').value
+var low=AZD.length-AZD.replace(/[D]/g, '').length
+document.getElementById('AZD').textContent="D="+low
+}
+function AZE(){
+var AZE=document.getElementById('txt1').value
+var low=AZE.length-AZE.replace(/[E]/g, '').length
+document.getElementById('AZE').textContent="E="+low
+}
+function AZF(){
+var AZF=document.getElementById('txt1').value
+var low=AZF.length-AZF.replace(/[F]/g, '').length
+document.getElementById('AZF').textContent="F="+low
+}
+function AZG(){
+var AZG=document.getElementById('txt1').value
+var low=AZG.length-AZG.replace(/[G]/g, '').length
+document.getElementById('AZG').textContent="G="+low
+}
+function AZH(){
+var AZH=document.getElementById('txt1').value
+var low=AZH.length-AZH.replace(/[H]/g, '').length
+document.getElementById('AZH').textContent="H="+low
+}
+function AZI(){
+var AZI=document.getElementById('txt1').value
+var low=AZI.length-AZI.replace(/[I]/g, '').length
+document.getElementById('AZI').textContent="I="+low
+}
+function AZJ(){
+var AZJ=document.getElementById('txt1').value
+var low=AZJ.length-AZJ.replace(/[J]/g, '').length
+document.getElementById('AZJ').textContent="J="+low
+}
+function AZK(){
+var AZK=document.getElementById('txt1').value
+var low=AZK.length-AZK.replace(/[K]/g, '').length
+document.getElementById('AZK').textContent="K="+low
+}
+function AZL(){
+var AZL=document.getElementById('txt1').value
+var low=AZL.length-AZL.replace(/[L]/g, '').length
+document.getElementById('AZL').textContent="L="+low
+}
+function AZM(){
+var AZM=document.getElementById('txt1').value
+var low=AZM.length-AZM.replace(/[M]/g, '').length
+document.getElementById('AZM').textContent="M="+low
+}
+function AZN(){
+var AZN=document.getElementById('txt1').value
+var low=AZN.length-AZN.replace(/[N]/g, '').length
+document.getElementById('AZN').textContent="N="+low
+}
+function AZO(){
+var AZO=document.getElementById('txt1').value
+var low=AZO.length-AZO.replace(/[O]/g, '').length
+document.getElementById('AZO').textContent="O="+low
+}
+function AZP(){
+var AZP=document.getElementById('txt1').value
+var low=AZP.length-AZP.replace(/[P]/g, '').length
+document.getElementById('AZP').textContent="P="+low
+}
+function AZQ(){
+var AZQ=document.getElementById('txt1').value
+var low=AZQ.length-AZQ.replace(/[Q]/g, '').length
+document.getElementById('AZQ').textContent="Q="+low
+}
+function AZR(){
+var AZR=document.getElementById('txt1').value
+var low=AZR.length-AZR.replace(/[R]/g, '').length
+document.getElementById('AZR').textContent="R="+low
+}
+function AZS(){
+var AZS=document.getElementById('txt1').value
+var low=AZS.length-AZS.replace(/[S]/g, '').length
+document.getElementById('AZS').textContent="S="+low
+}
+function AZT(){
+var AZT=document.getElementById('txt1').value
+var low=AZT.length-AZT.replace(/[T]/g, '').length
+document.getElementById('AZT').textContent="T="+low
+}
+function AZU(){
+var AZU=document.getElementById('txt1').value
+var low=AZU.length-AZU.replace(/[U]/g, '').length
+document.getElementById('AZU').textContent="U="+low
+}
+function AZV(){
+var AZV=document.getElementById('txt1').value
+var low=AZV.length-AZV.replace(/[V]/g, '').length
+document.getElementById('AZV').textContent="V="+low
+}
+function AZW(){
+var AZW=document.getElementById('txt1').value
+var low=AZW.length-AZW.replace(/[W]/g, '').length
+document.getElementById('AZW').textContent="W="+low
+}
+function AZX(){
+var AZX=document.getElementById('txt1').value
+var low=AZX.length-AZX.replace(/[X]/g, '').length
+document.getElementById('AZX').textContent="X="+low
+}
+function AZY(){
+var AZY=document.getElementById('txt1').value
+var low=AZY.length-AZY.replace(/[Y]/g, '').length
+document.getElementById('AZY').textContent="Y="+low
+}
+function AZZ(){
+var AZZ=document.getElementById('txt1').value
+var low=AZZ.length-AZZ.replace(/[Z]/g, '').length
+document.getElementById('AZZ').textContent="Z="+low
+}
+</script>
