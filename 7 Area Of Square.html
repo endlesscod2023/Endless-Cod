@@ -1,0 +1,29 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Area Of Square</title>
+<style type="text/css">
+button{margin: 1px; cursor: pointer;}
+</style>
+<fieldset style="width: 100px; margin: auto; padding: auto;">
+<label>Enter Side Length</label>
+<button onclick="clearvalue('txt1')">x</button>
+<br>
+<input type="number" id="txt1" placeholder="Enter Number Only L" oninput="run()">
+<br>
+<button onclick="run()">L²</button>
+<br>
+<b>Output</b>
+<button onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">x</button>
+<br>
+<input id="copy" type="text" placeholder="L²">
+</fieldset>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+function run(){
+var l=document.getElementById('txt1').value;
+var square=l*4;
+document.getElementById('copy').value=square;
+if(l==""){document.getElementById('copy').value="Enter value";}
+}		
+</script>
