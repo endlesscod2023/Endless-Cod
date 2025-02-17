@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplication Single line Table</title>
+<style type="text/css">
+button{margin: 1px; cursor: pointer;}
+</style>
+<fieldset style="width: 100px; margin: auto; padding: auto;">
+<label>Table Number</label>
+<button onclick="clearscreen('txt1')">x</button>
+<input id="txt1" oninput="run()" placeholder="Number Only" type="Number" oninput="run()">
+<br>
+<label>Devide Number</label>
+<button onclick="clearscreen('txt2')" style="margin-top: 10px;">x</button>
+<input id="txt2" oninput="run()" placeholder="Number Only" type="Number" oninput="run()">
+<br>
+
+<br>
+<b>Output</b>
+<button onclick="run()">1x2=</button>
+<button onclick="run1()">2x1=</button>
+<button onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearscreen('copy')">x</button>
+<br>
+<input id="copy" placeholder="1x1=1" type="text">
+<textarea></textarea>
+</fieldset>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearscreen(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+function run(){
+var a=document.getElementById('txt1').value;
+var b=document.getElementById('txt2').value;
+var	c=a+"x"+b+"="+a*b;
+document.getElementById('copy').value=c;
+if(a=="" || b=="" || c==""){document.getElementById('copy').value="Enter All Values";}
+}
+function run1(){
+var a=document.getElementById('txt1').value;
+var b=document.getElementById('txt2').value;
+var	c=b+"x"+a+"="+b*a;
+document.getElementById('copy').value=c;
+if(a=="" || b=="" || c==""){document.getElementById('copy').value="Enter All Values";}
+}
+</script>
