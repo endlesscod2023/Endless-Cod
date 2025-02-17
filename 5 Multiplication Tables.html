@@ -1,0 +1,68 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplication Tables</title>
+<style type="text/css">
+button{margin: 1px; cursor: pointer;}
+fieldset{width: 100px; margin: auto; padding: auto;}
+</style>
+<fieldset>
+<label>Starting Table</label>
+<button onclick="clearvalue('txt1')">x</button>
+<input type="number" id="txt1" placeholder="Number Only" value="1" oninput="run1()">
+<br>
+<label>Ending Table</label>
+<button onclick="clearvalue('txt2')">x</button>
+<input type="number" id="txt2" placeholder="Number Only" value="2" oninput="run1()">
+<br>
+<label>Tables Limit</label>
+<button onclick="clearvalue('txt3')">x</button>
+<input type="number" id="txt3" placeholder="Number Only" value="10" oninput="run1()">
+<br>
+<br>
+<b>Output</b> <button onclick="run2()">2x1=</button>
+ <button onclick="run1()">1x2=</button>
+<button onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">x</button>
+<textarea id="copy" rows="12" cols="21" placeholder="1X1=1
+...
+1X2=2
+...
+n" style="overflow: scroll;"></textarea>
+<br>
+</fieldset>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+function run1(){
+var a=document.getElementById('txt1').value;
+var b=document.getElementById('txt2').value;
+var c=document.getElementById('txt3').value;
+var d="";
+document.getElementById('copy').value="";
+for(var i=+a; i<=b; i++){
+document.getElementById('copy').value+=i+"\n";
+for(var j=1; j<=c; j++){
+d=j+"X"+i+"="+i*j+"\n";
+document.getElementById('copy').value+=d;
+}
+document.getElementById('copy').value+="\n"; 		
+}
+if(a=="" || b=="" || c==""){document.getElementById('copy').value="Enter All values";}
+}
+function run2(){
+var a=document.getElementById('txt1').value;
+var b=document.getElementById('txt2').value;
+var c=document.getElementById('txt3').value;
+var d="";
+document.getElementById('copy').value="";
+for(var i=+a; i<=b; i++){
+document.getElementById('copy').value+=i+"\n";
+for(var j=1; j<=c; j++){
+d=i+"X"+j+"="+i*j+"\n";
+document.getElementById('copy').value+=d;
+}
+document.getElementById('copy').value+="\n"; 		
+}
+if(a=="" || b=="" || c==""){document.getElementById('copy').value="Enter All values";}
+}
+</script>
