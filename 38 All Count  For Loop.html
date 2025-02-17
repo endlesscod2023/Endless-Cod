@@ -1,0 +1,206 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AtoZ</title>
+<style type="text/css">
+button{margin: 1px; cursor: pointer;}
+</style>
+<!-- <fieldset style="width: 250px; margin: auto; padding: auto;"> -->
+<textarea id="copy" cols="50" rows="20" placeholder="Output" style="overflow: scroll;"></textarea>
+<br>
+<button onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">Delete</button>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();
+	document.execCommand("Delete");}
+</script>
+<!-- for loop print column row -->
+<script type="text/javascript">
+function run1(){
+var a=document.getElementById('string').value;
+var b=document.getElementById('number').value;
+var t="";
+for(i=1; i<=b; i++){
+t+=a+"\n";
+document.getElementById("copy").value=t;
+}
+if(a=="" || b==""){document.getElementById('copy').value="Enter All Values"}
+}
+function run3(){
+var a=document.getElementById('string').value;
+var b=document.getElementById('number').value;
+var t="";
+for(i=1; i<=b; i++){
+t+=i+"."+a+"\n";
+document.getElementById("copy").value=t;
+}
+if(a=="" || b==""){document.getElementById('copy').value="Enter All Values"}
+}
+</script>
+<br>
+<button onclick="atoz()">atoz</button>
+<button onclick="AtoZ()">AtoZ</button>
+<script type="text/javascript">
+/*65-90
+97-122*/
+function atoz(){
+	document.getElementById("copy").value="";
+	for(var i=97; i<=122; i++){
+	document.getElementById("copy").value+=i+"="+(String.fromCharCode(i))+"\n";
+	}
+}
+function AtoZ(){
+	document.getElementById("copy").value="";
+	for(var i=65; i<=90; i++){
+	document.getElementById("copy").value+=i+"="+(String.fromCharCode(i))+"\n";
+	}
+}
+</script>
+<br>
+<label>char</label>
+<br>
+<button onclick="run2AtoZ()">char html</button>
+<button onclick="run1atoz()">char js</button>
+<button onclick="js()">char fun</button>
+&#34;
+&quot;
+<script type="text/javascript">
+function run1atoz(){
+	document.getElementById("copy").value="";
+	for(var i=65; i<=90; i++){
+document.getElementById("copy").value+=
+
+`function AZ`+(String.fromCharCode(i))+`(){`+`\n`+
+`var AZ`+(String.fromCharCode(i))+`=document.getElementById('txt1').value`+`\n`+
+`var low=AZ`+(String.fromCharCode(i))+`.length-AZ`+(String.fromCharCode(i))+`.replace(/[`+(String.fromCharCode(i))+`]/g, '').length`+`\n`+
+`document.getElementById('AZ`+(String.fromCharCode(i))+`').textContent="`+(String.fromCharCode(i))+`="+low`+`\n`+
+`}`+`\n`
+}
+}
+
+function run2AtoZ(){
+	document.getElementById("copy").value="";
+	for(var i=65; i<=90; i++){
+	document.getElementById("copy").value+=
+	`<button id="AZ`+(String.fromCharCode(i))+`" onclick="copy(this)">`+(String.fromCharCode(i))+`=0</button>`+`\n`
+}
+}
+
+function js(){
+	document.getElementById("copy").value="";
+	for(var i=97; i<=122; i++){
+	document.getElementById("copy").value+=
+	`az`+(String.fromCharCode(i))+`();`
+	}
+}
+</script>
+<br>
+<label>no</label><br>
+<button onclick="nohtml()">no html</button>
+<button onclick="nofun()">no fun</button>
+<button onclick="nojs()">no js</button>
+<script type="text/javascript">
+function nohtml(){
+	document.getElementById("copy").value="";
+	for(var i=0; i<=9; i++){
+	document.getElementById("copy").value+=
+	`<button id="n`+i+`" onclick="copy(this)">`+i+`=0</button>`+`\n`
+	}
+}
+// <button id="n09" onclick="copy(this)">0-9=</button>
+
+function nofun(){
+	document.getElementById("copy").value="";
+	for(var i=0; i<=9; i++){
+	document.getElementById("copy").value+=
+	`n`+i+`();`
+	}
+}
+// n09()
+
+function nojs(){
+	document.getElementById("copy").value="";
+	for(var i=0; i<=9; i++){
+	document.getElementById("copy").value+=
+`function n`+i+`(){`+`\n`+
+`var n=document.getElementById('txt1').value;`+`\n`+
+`var number=n.length-n.replace(/[`+i+`]+/g,'').length;`+`\n`+
+`document.getElementById('n`+i+`').textContent="`+i+`="+number;`+`\n`+
+`}`+`\n`
+	}
+}
+/*
+function n09(){
+var n=document.getElementById('txt1').value;
+var number=n.length-n.replace(/[0-9]+/g,'').length;
+document.getElementById('n09').textContent="0-9="+number;
+}
+*/
+</script>
+<!-- spesal char  -->
+<script type="text/javascript">
+// const numbers = [45, 4, 9, 16, 25];
+// let txt = "";
+// for (let x in numbers) {
+// txt += numbers[x] + "<br>";
+// }
+// document.getElementById("demo").innerHTML = txt;
+</script>
+<br>
+<label>spesall Char</label>
+<br>
+<button onclick="spcall()">spc All</button>
+<button onclick="spchtml()">spc html</button>
+<button onclick="spcjs()">spc js</button>
+<button onclick="spcfun()">spc fun</button>
+<script type="text/javascript">
+// "" Problen spT
+function spcall(){
+	var a=1;
+	document.getElementById("copy").value="";
+	const spall=[`~`,'`',`!`,`@`,`#`,`$`,`%`,`^`,`&`,`*`,`(`,`)`,`_`,`+`,`-`,`=`,`{`,`}`,`[`,`]`,`|`,`:`,`"`,`;`,`'`,`<`,`>`,`?`,`,`,`.`,`/`];
+	for (let x in spall) {
+	document.getElementById("copy").value+=
+	spall[x]+ a++ +'\n'
+	}
+}
+
+function spchtml(){
+// "" Problen spT 
+// id=123.. 31
+	document.getElementById("copy").value="";
+	const spall=[`~`,'`',`!`,`@`,`#`,`$`,`%`,`^`,`&`,`*`,`(`,`)`,`_`,`+`,`-`,`=`,`{`,`}`,`[`,`]`,`|`,`:`,`"`,`;`,`'`,`<`,`>`,`?`,`,`,`.`,`/`];
+	for (let x in spall) {
+	document.getElementById("copy").value+=
+	`<button id="sp" onclick="copy(this)">`+spall[x]+`=0</button>`+'\n'
+	}
+}
+function spcjs(){
+// "" Problen spT
+	document.getElementById("copy").value="";
+	const spall=[`~`,'`',`!`,`@`,`#`,`$`,`%`,`^`,`&`,`*`,`(`,`)`,`_`,`+`,`-`,`=`,`{`,`}`,`[`,`]`,`|`,`:`,`"`,`;`,`'`,`<`,`>`,`?`,`,`,`.`,`/`];
+	for (let x in spall) {
+	document.getElementById("copy").value+=
+`function sp(){`+`\n`+
+`var sp=document.getElementById('txt1').value`+`\n`+
+`var low=sp.length-sp.replace(/[`+spall[x]+`]/g, '').length`+`\n`+
+`document.getElementById('sp').textContent="a="+low`+`\n`+
+`}`
+	}
+}
+
+// function spc!(){
+// var spc!=document.getElementById('txt1').value
+// var low=spc!.length-spc!.replace(/[a]/g, '').length
+// document.getElementById('spc!').textContent="!="+spc!
+
+function spcfun(){
+// "" Problen spT
+	document.getElementById("copy").value="";
+	for(var i=1;i<=31;i++) {
+	document.getElementById("copy").value+=
+	`sp`+i+`();`
+	}
+}
+// spc!()
+</script>
+</fieldset>
