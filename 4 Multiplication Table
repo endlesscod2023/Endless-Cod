@@ -1,0 +1,54 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplication Table</title>
+<style type="text/css">
+button{margin: 1px; cursor: pointer;}
+fieldset{width: 100px; margin: auto; padding: auto;}
+</style>
+<fieldset>
+<label>Table Number</label>
+<button onclick="clearscreen('txt1')">x</button>
+<br>
+<input type="number" id="txt1" placeholder="Number Only" oninput="run1()">
+<br>
+<label>Table Limit</label>
+<button onclick="clearscreen('txt2')" style="margin-top: 10px;">x</button>
+<br>
+<input type="number" id="txt2" placeholder="Number Only" value="10" oninput="run1()">
+<br>
+<br>
+<b>Output</b>
+<button onclick="run2()">2X1=</button>
+<button onclick="run1()">1X2=</button>
+<br>
+<button onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearscreen('copy')">x</button>
+<textarea id="copy" rows="12" cols="21" placeholder="1x1=1" style="overflow: scroll;"></textarea>
+</fieldset>
+<center>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearscreen(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+function run1(){
+var a=document.getElementById('txt1').value;
+var b=document.getElementById('txt2').value;
+var c="";
+for(var i=1; i<=b; i++){
+c+=i+"X"+a+"="+a*i+"\n";
+document.getElementById('copy').value=a+"\n";
+document.getElementById('copy').value+=c;
+}  
+if(a=="" || b==""){document.getElementById('copy').value="Enter All values";}	
+}
+function run2(){
+var a=document.getElementById('txt1').value;
+var b=document.getElementById('txt2').value;
+var c="";
+for(var i=1; i<=b; i++){
+c+=a+"X"+i+"="+a*i+"\n";
+document.getElementById('copy').value=a+"\n";
+document.getElementById('copy').value+=c;
+}  
+if(a=="" || b==""){document.getElementById('copy').value="Enter All values";}
+}
+</script>
