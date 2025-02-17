@@ -1,0 +1,200 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sum 2.0</title>
+<style type="text/css">
+*{scroll-behavior: smooth;}
+li{display: inline-block;}
+
+section{
+width: 100%;
+float: left;
+height: 100%; 
+position: relative;
+}
+
+fieldset{width: 100px; margin: auto; padding: auto;}
+/*input{width: 100px;}*/
+
+button{margin: 1px; cursor: pointer;}
+textarea{overflow: scroll;}
+</style>    
+<section id="add">
+<ul>
+<li><a href="#add"><button style="background: orange;">Add</button></a></li>
+<li><a href="#sub"><button>Sub</button></a></li>
+<li><a href="#mul"><button>mul</button></a></li>
+<li><a href="#divid"><button>divid</button></a></li>
+<li><a href="#table"><button>table</button></a></li>
+</ul>
+<fieldset>
+<label>N1</label><button onclick="clearvalue('txt1')">x</button>
+<button onclick="copyvalue('txt1')">C</button>
+<input type="number" id="txt1" placeholder="Number Only" oninput="run1()">
+<br>(+)<br>
+<label>N2</label>
+<button onclick="clearvalue('txt2')">x</button>
+<button onclick="copyvalue('txt2')">C</button>
+<input type="number" id="txt2" placeholder="Number Only" oninput="run1()">
+
+<br><button onclick="run1()">Run</button>
+<button onclick="copyvalue('copy3')">C</button>
+<button onclick="clearvalue('copy3')">x</button>
+<br>
+<input type="text" id="copy3" placeholder="x+y">
+</fieldset>
+</section>
+<!-- - -->
+<section id="sub">
+<ul>
+<li><a href="#add"><button>Add</button></a></li>
+<li><a href="#sub"><button style="background: orange;">Sub</button></a></li>
+<li><a href="#mul"><button>mul</button></a></li>
+<li><a href="#divid"><button>divid</button></a></li>
+<li><a href="#table"><button>table</button></a></li>
+</ul>
+<fieldset>
+<label>N1</label>
+<button onclick="clearvalue('txt4')">x</button>
+<button onclick="copyvalue('txt4')">c</button>
+<input type="number" id="txt4" placeholder="Number Only" oninput="run2()">
+<br>(-)<br>
+<label>N2</label>
+<button onclick="clearvalue('txt5')">x</button>
+<button onclick="copyvalue('txt5')">c</button>
+<input type="number" id="txt5" placeholder="Number Only" oninput="run2()">
+<br><button onclick="run2()">Run</button>
+<button onclick="copyvalue('copy6')">c</button>
+<button onclick="clearvalue('copy6')">x</button>
+<br>
+<input type="text" id="copy6" placeholder="x-y">
+</fieldset>
+</section>
+
+<section id="mul">
+<ul>
+<li><a href="#add"><button>Add</button></a></li>
+<li><a href="#sub"><button>Sub</button></a></li>
+<li><a href="#mul"><button style="background: orange;">mul</button></a></li>
+<li><a href="#divid"><button>divid</button></a></li>
+<li><a href="#table"><button>table</button></a></li>
+</ul>
+<fieldset>
+<label>N1</label>
+<button onclick="clearvalue('txt7')">x</button>
+<button onclick="copyvalue('txt7')">c</button>
+<input type="number" id="txt7" placeholder="Number Only" oninput="run3()">
+<br>(*)<br>
+<label>N2</label>
+<button onclick="clearvalue('txt8')">x</button>
+<button onclick="copyvalue('txt8')">c</button>
+<input type="number" id="txt8" placeholder="Number Only" oninput="run3()">
+<br><button onclick="run3()">Run</button>
+<button onclick="copyvalue('copy9')">c</button>
+<button onclick="clearvalue('copy9')">x</button>
+<br>
+<input type="text" id="copy9" placeholder="x*y">
+</fieldset>
+</section>
+
+<section id="divid">
+<ul>
+<li><a href="#add"><button>Add</button></a></li>
+<li><a href="#sub"><button>Sub</button></a></li>
+<li><a href="#mul"><button>mul</button></a></li>
+<li><a href="#divid"><button style="background: orange;">divid</button></a></li>
+<li><a href="#table"><button>table</button></a></li>
+</ul>
+<fieldset>
+<label>N1</label>
+<button onclick="clearvalue('txt10')">x</button>
+<button onclick="copyvalue('txt10')">c</button>
+<input type="number" id="txt10" placeholder="Number Only" oninput="run4()">
+<br>(/)<br>
+<label>N2</label>
+<button onclick="clearvalue('txt11')">x</button>
+<button onclick="copyvalue('txt11')">c</button>
+<input type="number" id="txt11" placeholder="Number Only" oninput="run4()">
+<br><button onclick="run4()">Run</button>
+<button onclick="copyvalue('copy12')">c</button>
+<button onclick="clearvalue('copy12')">x</button>
+<br>
+<input type="text" id="copy12" placeholder="x/y">
+</fieldset>
+</section>
+
+<section id="table">
+<ul>
+<li><a href="#add"><button>Add</button></a></li>
+<li><a href="#sub"><button>Sub</button></a></li>
+<li><a href="#mul"><button>mul</button></a></li>
+<li><a href="#divid"><button>divid</button></a></li>
+<li><a href="#table"><button style="background: orange;">table</button></a></li>
+</ul>
+<fieldset>
+<label>Table Number</label>
+<button onclick="clearvalue('txt13')">x</button>
+<button onclick="copyvalue('txt13')">c</button>
+<input type="number" id="txt13" placeholder="Table Number" oninput="run5()">
+<br>
+<label>Table Limit</label>
+<button onclick="clearvalue('txt14')">x</button>
+<button onclick="copyvalue('txt14')">c</button>
+<input type="number" id="txt14" placeholder="Table Limit" value="10" oninput="run5()">
+<br>
+<button onclick="run6()">2*1</button>
+<button onclick="run5()">1*2</button>
+<br>
+<textarea id="copy15" rows="12" cols="10" placeholder="1*1 ..."></textarea>
+<br>
+<button onclick="copyvalue('copy15')">c</button>
+<button onclick="clearvalue('copy15')">x</button>
+</fieldset>
+</section>
+<script type="text/javascript">
+function run1(){
+var a1=document.getElementById('txt1').value;
+var a2=document.getElementById('txt2').value;
+document.getElementById('copy3').value=+a1+ +a2;
+}
+function run2(){
+var s1=document.getElementById('txt4').value;
+var s2=document.getElementById('txt5').value;
+document.getElementById('copy6').value=s1-s2;
+}
+function run3(){
+var a1=document.getElementById('txt7').value;
+var a2=document.getElementById('txt8').value;
+document.getElementById('copy9').value=+a1* +a2;
+}
+function run4(){
+var a1=document.getElementById('txt10').value;
+var a2=document.getElementById('txt11').value;
+document.getElementById('copy12').value=+a1/ +a2;
+}
+function run5(){
+var m1=document.getElementById('txt13').value;
+var m2=document.getElementById('txt14').value;
+var c="";
+for(var i=1; i<=m2; i++){
+c+=i+"*"+m1+"="+m1*i+"\n";
+document.getElementById('copy15').value=
+m1+"\n"
++c;
+}   
+}
+function run6(){
+var m1=document.getElementById('txt13').value;
+var m2=document.getElementById('txt14').value;
+var c="";
+for(var i=1; i<=m2; i++){
+c+=m1+"*"+i+"="+m1*i+"\n";
+document.getElementById('copy15').value=
+m1+"\n"
++c;
+}   
+}
+</script>
+
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+</script>
