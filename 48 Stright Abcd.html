@@ -1,0 +1,76 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>Straight Abcd</title>
+
+<style type="text/css">
+button{margin: 1px; cursor: pointer;}
+textarea{overflow: scroll;}
+fieldset{width: 100px; margin: auto; padding: auto;}
+</style>
+
+<fieldset>
+<label>Starting Abcd</label>
+<button onclick="clearvalue('sabcd')">X</button>
+<input id="sabcd" type="text" oninput="run1()" placeholder="Abcd Only Ez.a" value="a">
+<br>
+<label>Ending Abcd</label>
+<button onclick="clearvalue('eabcd')">X</button>
+<input id="eabcd" type="text"  oninput="run1()" placeholder="Abcd Only Ex.z" value="z">
+<br>
+<button onclick="run2()">v abcd</button>
+<button onclick="run1()">> abcd</button>
+<br>
+<button onclick="run4()">v ABCD</button>
+<button onclick="run3()">> ABCD</button>
+<br>
+<b>Output</b>
+<button onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">x</button>
+<br>
+<textarea id="copy" rows="10"></textarea>
+</fieldset>
+
+<script type="text/javascript">
+function run1(){
+document.getElementById('copy').value='';
+var sabcd=document.getElementById('sabcd').value.toLowerCase();
+var eabcd=document.getElementById('eabcd').value.toLowerCase();
+var ssabcd=sabcd.charCodeAt(0);
+var eeabcd=eabcd.charCodeAt(0);
+if(sabcd=="" || eabcd==""){document.getElementById('copy').value="Enter All Values"}
+for(var i=ssabcd; i<=eeabcd; i++){
+document.getElementById("copy").value+=(String.fromCharCode(i))+" ";
+}}
+function run2(){
+document.getElementById('copy').value='';
+var sabcd=document.getElementById('sabcd').value.toLowerCase();
+var eabcd=document.getElementById('eabcd').value.toLowerCase();
+var ssabcd=sabcd.charCodeAt(0);
+var eeabcd=eabcd.charCodeAt(0);
+if(sabcd=="" || eabcd==""){document.getElementById('copy').value="Enter All Values"}
+for(var i=ssabcd; i<=eeabcd; i++){
+document.getElementById("copy").value+=(String.fromCharCode(i))+"\n";
+}}
+function run3(){
+document.getElementById('copy').value='';
+var sabcd=document.getElementById('sabcd').value.toUpperCase();
+var eabcd=document.getElementById('eabcd').value.toUpperCase();
+var ssabcd=sabcd.charCodeAt(0);
+var eeabcd=eabcd.charCodeAt(0);
+if(sabcd=="" || eabcd==""){document.getElementById('copy').value="Enter All Values"}
+for(var i=ssabcd; i<=eeabcd; i++){
+document.getElementById("copy").value+=(String.fromCharCode(i))+" ";
+}}
+function run4(){
+document.getElementById('copy').value='';
+var sabcd=document.getElementById('sabcd').value.toUpperCase();
+var eabcd=document.getElementById('eabcd').value.toUpperCase();
+var ssabcd=sabcd.charCodeAt(0);
+var eeabcd=eabcd.charCodeAt(0);
+if(sabcd=="" || eabcd==""){document.getElementById('copy').value="Enter All Values"}
+for(var i=ssabcd; i<=eeabcd; i++){
+document.getElementById("copy").value+=(String.fromCharCode(i))+"\n";
+}}
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}	
+</script>
