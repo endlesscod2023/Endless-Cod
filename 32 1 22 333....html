@@ -1,0 +1,60 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 22 333...</title>
+<style type="text/css">button{margin: 1px; cursor: pointer;}
+textarea{overflow: scroll;}</style>
+<fieldset style="width: 100px; margin: auto; padding: auto;">
+<label>Enter Starting Number</label>
+<button onclick="clearvalue('txt1')">x</button>
+<br>
+<input type="Number" id="txt1" placeholder="(1<=) Enter Number Only" oninput="run()">
+
+<br><br>
+<label>Enter Ending Number</label>
+<button onclick="clearvalue('txt2')">x</button>
+<br>
+<input type="Number" id="txt2" placeholder="Enter Number Only" oninput="run()">
+<br>
+<button onclick="run()">v</button>
+<button onclick="run1()">></button>
+<br>
+<b>Output</b>
+<button type="button" onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">x</button>
+<br>
+<textarea id="copy" cols="21" rows="10" placeholder="1
+22
+333
+.
+.
+.
+"></textarea>
+</fieldset>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+function run(){
+var s=document.getElementById('txt1').value;
+var e=document.getElementById('txt2').value;
+document.getElementById('copy').value="";
+for (var i=+s; i<=e; i++){
+for (var j=1; j<=i; j++){
+document.getElementById('copy').value+=i+" ";
+}
+document.getElementById('copy').value+="\n";		
+}
+if(s=="" || e==""){document.getElementById('copy').value="Enter All Values";}
+}
+
+function run1(){
+var s=document.getElementById('txt1').value;
+var e=document.getElementById('txt2').value;
+document.getElementById('copy').value="";
+for (var i=+s; i<=e; i++){
+for (var j=1; j<=i; j++){
+document.getElementById('copy').value+=i+" ";
+}
+document.getElementById('copy').value+=" ";		
+}
+if(s=="" || e==""){document.getElementById('copy').value="Enter All Values";}
+}
+</script>
