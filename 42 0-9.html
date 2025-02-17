@@ -1,0 +1,98 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>0-9 Count</title>
+<style type="text/css">
+button{margin: 1px; cursor: pointer;}
+textarea{overflow: scroll;}
+</style>
+<fieldset style="width:100px; margin: auto; padding: auto;">
+<label>Enter Any</label><button onclick="clearvalue('txt1')">x</button><br>
+<textarea id="txt1" placeholder="Enter Any" rows="5" oninput="run()"></textarea>
+<br>
+<button id="n09" onclick="copy(this)">0-9=0</button>
+<br>
+<button id="n0" onclick="copy(this)">0=0</button><br>
+<button id="n1" onclick="copy(this)">1=0</button><br>
+<button id="n2" onclick="copy(this)">2=0</button><br>
+<button id="n3" onclick="copy(this)">3=0</button><br>
+<button id="n4" onclick="copy(this)">4=0</button><br>
+<button id="n5" onclick="copy(this)">5=0</button><br>
+<button id="n6" onclick="copy(this)">6=0</button><br>
+<button id="n7" onclick="copy(this)">7=0</button><br>
+<button id="n8" onclick="copy(this)">8=0</button><br>
+<button id="n9" onclick="copy(this)">9=0</button><br>
+</fieldset>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();
+	document.execCommand("Delete");}
+function copy(that){
+var inp=document.createElement('input');
+document.body.appendChild(inp)
+inp.value=that.textContent
+inp.select();
+document.execCommand('copy', false);
+inp.remove();
+}
+</script>
+<script type="text/javascript">
+function run(){ 
+n09();n0();n1();n2();n3();n4();n5();n6();n7();n8();n9();
+}
+// no
+function n09(){
+var n=document.getElementById('txt1').value;
+var number=n.length-n.replace(/[0-9]+/g,'').length;
+document.getElementById('n09').textContent="0-9="+number;
+}
+function n0(){
+var n=document.getElementById('txt1').value;
+var number=n.length-n.replace(/[0]+/g,'').length;
+document.getElementById('n0').textContent="0="+number;
+}
+function n1(){
+var n=document.getElementById('txt1').value;
+var number=n.length-n.replace(/[1]+/g,'').length;
+document.getElementById('n1').textContent="1="+number;
+}
+function n2(){
+var n=document.getElementById('txt1').value;
+var number=n.length-n.replace(/[2]+/g,'').length;
+document.getElementById('n2').textContent="2="+number;
+}
+function n3(){
+var n=document.getElementById('txt1').value;
+var number=n.length-n.replace(/[3]+/g,'').length;
+document.getElementById('n3').textContent="3="+number;
+}
+function n4(){
+var n=document.getElementById('txt1').value;
+var number=n.length-n.replace(/[4]+/g,'').length;
+document.getElementById('n4').textContent="4="+number;
+}
+function n5(){
+var n=document.getElementById('txt1').value;
+var number=n.length-n.replace(/[5]+/g,'').length;
+document.getElementById('n5').textContent="5="+number;
+}
+function n6(){
+var n=document.getElementById('txt1').value;
+var number=n.length-n.replace(/[6]+/g,'').length;
+document.getElementById('n6').textContent="6="+number;
+}
+function n7(){
+var n=document.getElementById('txt1').value;
+var number=n.length-n.replace(/[7]+/g,'').length;
+document.getElementById('n7').textContent="7="+number;
+}
+function n8(){
+var n=document.getElementById('txt1').value;
+var number=n.length-n.replace(/[8]+/g,'').length;
+document.getElementById('n8').textContent="8="+number;
+}
+function n9(){
+var n=document.getElementById('txt1').value;
+var number=n.length-n.replace(/[9]+/g,'').length;
+document.getElementById('n9').textContent="9="+number;
+}
+</script>
