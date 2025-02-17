@@ -1,0 +1,32 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Addirion</title>
+<style type="text/css">button{margin: 1px; cursor: pointer;}</style>
+<fieldset style="width: 100px; margin: auto; padding: auto;">
+<label>Enter First Number</label>
+<button onclick="clearvalue('txt1')">x</button>
+<br>
+<input type="number" id="txt1" placeholder="Enter Number Only n1" oninput="run()">
+<br>
+<label>Enter Second Number</label>
+<button onclick="clearvalue('txt2')" style="margin-top: 10px;">x</button>
+<br>
+<input type="number" id="txt2" placeholder="Enter Number Only n2" oninput="run()">
+<br>
+<button onclick="run()">n1+n2</button>
+<br>
+<b>Output</b>
+<button onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">x</button>
+<input type="text" id="copy" name="" placeholder="n1+n2">
+</fieldset>	
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+function run(){
+var x=document.getElementById('txt1').value;
+var y=document.getElementById('txt2').value;
+var sum= +x+ +y;
+document.getElementById('copy').value=sum;
+if(x=="" || y==""){document.getElementById('copy').value="Enter All Values";}
+}		
+</script>
