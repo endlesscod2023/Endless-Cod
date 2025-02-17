@@ -1,0 +1,64 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Square Numbers</title>
+<style type="text/css">button{margin: 1px; cursor: pointer;}</style>
+<fieldset style="width: 100px; margin: auto; padding: auto;">
+<label>Starting Number</label>
+<button onclick="clearvalue('txt1')">x</button>
+<input type="number" id="txt1" placeholder="Enter Number Only" oninput="run3()">
+<br><br>
+<label>How Many Numbers</label>
+<button onclick="clearvalue('txt2')">x</button>
+<input type="number" id="txt2" placeholder="Enter Number Only" oninput="run3()">
+<br>
+<button onclick="run()">></button>
+<button onclick="run1()">v</button>
+<br>
+<button onclick="run2()">1<sup>2</sup>=></button>
+<button onclick="run3()">1<sup>2</sup>=v</button>
+<br>
+<b>Output</b>
+<button type="button" onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">x</button>
+<br>
+<textarea id="copy" cols="21" rows="10" placeholder="x*x" style="overflow: scroll;"></textarea>
+</fieldset>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+function run(){
+var o=document.getElementById('txt1').value;
+var p=document.getElementById('txt2').value;
+document.getElementById('copy').value="";
+for (var i=+o; i<=+p; i++){					
+document.getElementById('copy').value+=+i*i+" ";
+}
+if(p=="" || o==""){document.getElementById('copy').value="Enter All Value";}
+}
+function run1(){
+var o=document.getElementById('txt1').value;
+var p=document.getElementById('txt2').value;
+document.getElementById('copy').value="";
+for (var i=+o; i<=+p; i++){					
+document.getElementById('copy').value+= i*i +"\n";
+}
+if(p=="" || o==""){document.getElementById('copy').value="Enter All Value";}
+}
+function run2(){
+var o=document.getElementById('txt1').value;
+var p=document.getElementById('txt2').value;
+document.getElementById('copy').value="";
+for (var i=+o; i<=+p; i++){				
+document.getElementById('copy').value+=i+"²="+i*i+" ";	
+}
+if(p=="" || o==""){document.getElementById('copy').value="Enter All Value";}
+}
+function run3(){
+var o=document.getElementById('txt1').value;
+var p=document.getElementById('txt2').value;
+document.getElementById('copy').value="";
+for (var i=+o; i<=+p; i++){					
+document.getElementById('copy').value+=i+"²="+i*i+"\n";
+}
+if(p=="" || o==""){document.getElementById('copy').value="Enter All Value";}
+}
+</script>
