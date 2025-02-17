@@ -1,0 +1,43 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>Simle Intrest</title>
+
+<style type="text/css">
+fieldset{width: 100px; margin: auto; padding: auto;}
+button{margin: 1px; cursor: pointer;}
+textarea{overflow: scroll;}
+</style>
+
+<fieldset>
+<label>principal Amount</label>
+<button onclick="clearvalue('txt1')">x</button>
+<input type="number" id="txt1" placeholder="Number Only Ex.100"  oninput="run()">
+<br>
+<label>Enter timp period</label>
+<button onclick="clearvalue('txt2')">x</button>
+<input type="number" id="txt2" placeholder="Number Only Ex.10"  oninput="run()">
+<br>
+<label>Enter interest rate</label>
+<button onclick="clearvalue('txt3')">x</button>
+<input type="number" id="txt3" placeholder="Number Only Ex.5"  oninput="run()">
+<br>
+<button onclick="run()">Run</button>
+<br>
+<b>Output</b>
+<button type="button" onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">x</button>
+<input id="copy" placeholder="I=(p*t*r)/100">
+</fieldset>
+
+<script type="text/javascript">
+function run(){
+var p=document.getElementById('txt1').value;
+var t=document.getElementById('txt2').value;
+var r=document.getElementById('txt3').value;
+var a=(p*t*r) /100;
+document.getElementById('copy').value=a;
+if(p=="" || t=="" || r==""){document.getElementById('copy').value="Enter All Values";}
+}
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+</script>
