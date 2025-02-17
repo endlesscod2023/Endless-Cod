@@ -1,0 +1,26 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Even Or Odd Number</title>
+<style type="text/css">button{margin: 1px; cursor: pointer;}</style>
+<fieldset style="width: 100px; margin: auto; padding: auto;">
+<label>Enter Number</label>
+<button onclick="clearvalue('txt1')">x</button>
+<input type="Number" id="txt1" placeholder="Enter Number Only n" oninput="run()">
+<br>
+<button onclick="run()">Odd or Even</button>
+<br>
+<b>Output</b>
+<button onclick="copyvalue('txt2')">Copy</button>
+<button onclick="clearvalue('txt2')">x</button>
+<br>
+<input type="text" id="txt2" placeholder="n%2==0 Or n%2==1">
+</fieldset>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+function run(){
+var a=document.getElementById('txt1').value;
+if(a%2==0){document.getElementById("txt2").value=a+" is Even Number";}
+else if(a%2==1){document.getElementById("txt2").value=a+" is Odd Number";}
+if(a=="" || a<=0){document.getElementById("txt2").value="Check value";}
+}		
+</script></body></html>
