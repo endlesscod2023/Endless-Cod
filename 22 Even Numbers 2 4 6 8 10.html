@@ -1,0 +1,43 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Even Numbers Start To End</title>
+<style type="text/css">button{margin: 1px; cursor: pointer;}</style>
+<fieldset style="width: 100px; margin: auto; padding: auto;">
+<label>Enter Starting Number</label>
+<button onclick="clearvalue('txt1')">x</button>
+<input type="Number" id="txt1" placeholder="Enter Number Only" value="2" oninput="run2()">
+<br>
+<label>Enter Ending Number</label>
+<button onclick="clearvalue('txt2')" style="margin-top: 10px;">x</button>
+<input type="Number" id="txt2" placeholder="Enter Number Only" value="10" oninput="run2()">
+<br>
+<button onclick="run1()">></button>
+<button onclick="run2()">v</button>
+<br>
+<b>Output</b>
+<button onclick="copyvalue('copy')">Copy</button>
+<button onclick="clearvalue('copy')">x</button>
+<br>
+<textarea id="copy" cols="21" rows="10" placeholder="2 4 6 ..." style="overflow: scroll;"></textarea>
+</fieldset>
+<script type="text/javascript">
+function copyvalue(id){const copy=document.getElementById(id);copy.focus();copy.select();document.execCommand("Copy");}
+function clearvalue(id){const del=document.getElementById(id);del.select();document.execCommand("Delete");}
+function run1(){
+var a=document.getElementById('txt1').value;
+var b=document.getElementById('txt2').value;
+document.getElementById("copy").value="";
+for(i=+a; i<=b; i++){
+if(i%2==0){document.getElementById("copy").value+=i+" ";}
+}
+if(a=="" || b==""){document.getElementById("copy").value="Enter All Values";}
+}
+function run2(){
+var a=document.getElementById('txt1').value;
+var b=document.getElementById('txt2').value;
+document.getElementById("copy").value="";
+for(i=+a; i<=b; i++){
+if(i%2==0){document.getElementById("copy").value+=i+"\n";}
+}
+if(a=="" || b==""){document.getElementById("copy").value="Enter All Values";}
+}
+</script>
